@@ -17,9 +17,9 @@ import { ContactsModule } from './contact/contact.module';
         type: 'postgres',
         host: configService.get('DB_HOST'),
         port: +configService.get<number>('DB_PORT'),
-        username: 'postgres' || configService.get('DB_USERNAME'),
-        password: 'Liat2001' || configService.get('DB_PASSWORD'),
-        database: 'phonebook' || configService.get('DB_NAME'),
+        username: configService.get('DB_USERNAME'),
+        password: configService.get('DB_PASSWORD'),
+        database: configService.get('DB_NAME'),
         entities: entities,
         synchronize: true,
       } as TypeOrmModuleAsyncOptions)
@@ -27,12 +27,6 @@ import { ContactsModule } from './contact/contact.module';
     }),
     
     GraphQLModule.forRoot<ApolloDriverConfig>({
-
-      // definitions: {
-      //   path: join(process.cwd(), 'src/graphql.schama.ts'),
-      //   outputAs: 'class',
-
-      // },
       driver: ApolloDriver,
       debug: false,
       playground: false,
