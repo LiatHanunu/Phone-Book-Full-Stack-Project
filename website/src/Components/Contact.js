@@ -16,7 +16,7 @@ export default function Contact(props) {
         <Container>
             <Row className="py-4" onClick={handleShow}>
                 <Col xs={4} lg={3} className='d-flex'>
-                    <img src={photo}  className={` cov border border-2 shadow rounded w-100 ${contact?.photoStyle} `}></img>
+                    <img src={photo}  className={` img_cov border border-2 shadow rounded w-100 ${contact?.photoStyle} `}></img>
                 </Col>
                 {contact?.nickname && <Col className="px-5 py-1" xs={8}><h4 className='text-truncate fw-bold '>{contact?.nickname}</h4></Col>}
                 {!contact?.nickname && <Col className="px-5 py-1" xs={8}><h4 className='text-truncate  fw-bold'>{contact?.firstName} {contact?.lastName}</h4></Col>}
