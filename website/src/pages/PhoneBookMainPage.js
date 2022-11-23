@@ -54,15 +54,14 @@ export default function PhoneBookMainPage() {
     })
 
     return (
-        <Container >
-            <Row>
+        <Container className='' >
+           
                 <NavBar search={searchContacts}></NavBar>
-            </Row>
-            <Row>
+           
                 <ListGroup as="ul">
                     {contacts.map((contact, index) => <ListGroup.Item key={index} action variant="light" ><Contact contact={contact} /></ListGroup.Item>)}
                 </ListGroup>
-            </Row>
+           
         </Container>
 
     )

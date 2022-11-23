@@ -1,14 +1,13 @@
 import TextInput from "./TextInput"
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
 import validate from "../General/validations";
-import { Row, Col, Badge, ToggleButtonGroup, ToggleButton } from "react-bootstrap";
+import { Row, Col, ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 import { MdAddCall } from "react-icons/md";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import { useQuery, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { FiDelete, FiTrash2 } from "react-icons/fi";
 import { useLazyQuery } from '@apollo/client';
 import { ADD_CONTACT, DELETE_CONTACT, GET_URL, UPDATE_CONTACT } from "../General/graphQlRequests";
@@ -203,24 +202,27 @@ export default function ContactForm(props) {
         <>
             <Col lg={12} xs={12}>
                 <Form className='rounded border p-3 m-2 bg-light'>
-                    <Row className="d-flex justify-content-center ">
-                        <img src={user.photo.value}
-                            className={`cov w-50 border border-2 shadow rounded mb-3 ${user.photoStyle.value}`} alt="example placeholder" />
+                    <Row className="d-flex justify-content-center mb-2 p-0">
+                        <Col className="overlay_box p-0">
+                            <img src={user.photo.value}
+                                className={`img_cov border border-2 shadow rounded  ${user.photoStyle.value}`} alt="example placeholder" />
+                            {!viewOnlyForm && <div class="overlay rounded">
+                                <label for="browse" className="text ">Upload Image</label>
+                            </div>}
+
+                        </Col>
                     </Row>
-                    {!viewOnlyForm && <Container className="">
-                        <Row className="d-flex justify-content-center ">
-                            <ToggleButtonGroup className=' m-2 ' type="radio" name="photoStyle" >
-                                {filters.map((filter, index) => <ToggleButton key={index} variant="outline-secondary" name="photoStyle" active={filter.class == user.photoStyle.value} id={filter.name} value={filter.class} onClick={() => changePhotoStyle(filter.class)}>{filter.name}
-                                </ToggleButton>)}
-                            </ToggleButtonGroup>
-                        </Row>
-                        <Row className="d-flex justify-content-center ">
-                            <Form.Group className="mb-3 ">
-                                <Form.Control className="" name='photo' onChange={saveImageUrlAndPreviewImage} type="file" accept="image/*" />
-                            </Form.Group>
-                            <hr />
-                        </Row>
-                    </Container>}
+                    {!viewOnlyForm && <Row className="d-flex">
+                        <ToggleButtonGroup className='my-2 p-1' type="radio" name="photoStyle" >
+                            {filters.map((filter, index) => <ToggleButton key={index} variant="outline-secondary" name="photoStyle" active={filter.class == user.photoStyle.value} id={filter.name} value={filter.class} onClick={() => changePhotoStyle(filter.class)}>{filter.name}
+                            </ToggleButton>)}
+                        </ToggleButtonGroup>
+                        <Form.Group className="mb-3 ">
+                            <Form.Control id="browse" className="" name='photo' onChange={saveImageUrlAndPreviewImage} type="file" accept="image/*" style={{ display: 'none' }} />
+
+                        </Form.Group>
+                        <hr />
+                    </Row>}
                     <Row>
                         <TextInput
                             disabled={viewOnlyForm}
