@@ -14,7 +14,7 @@ export default function NavBar(props) {
     const handleShow = () => setShow(true);
     return (
 
-        <Navbar bg="dark" variant="dark" className='rounded-top' fixed='top'>
+        <Navbar bg="dark" variant="dark" className='rounded-top sticky-top'>
             <Container fluid>
                 <Navbar.Brand >Phone Book</Navbar.Brand>
                 <Form className="d-flex">
