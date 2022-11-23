@@ -1,6 +1,6 @@
 # Phone Book Full Stack Project
 
-## $\colorbox{red}{{\color{white}{In order for this project to work properly you must enter aws-s3 bucket credentials in the .env file!! }}}$
+ - In order for this project to work properly you must enter aws-s3 bucket credentials in the .env file!! 
 
 ![image](https://user-images.githubusercontent.com/108211384/203539794-dfde3433-2eae-41cb-8179-dbb9571aa5e8.png)
 
