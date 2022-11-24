@@ -47,6 +47,7 @@ have the same functionality as the add contact) and a way to delete the contact
 
 ## PhoneBook main page:
 The contacts are prsented in descending order by the title they are prsented by(nickname or firstname+lastname).
+
 ![image](https://user-images.githubusercontent.com/108211384/203537358-a68dd29c-df2d-4b74-9fe8-853620e56b56.png)
 
 ## Creating new contact form:
@@ -58,10 +59,12 @@ The contacts are prsented in descending order by the title they are prsented by(
 
 ## How the newly created contact prsented:
 When clicking on contact a pop-up will open with the contact details and an option to delete this contact or edit it's details.
+
 ![image](https://user-images.githubusercontent.com/108211384/203536492-34cd7844-a632-4363-a9bc-3a67e53a0d4a.png)
 
 
 ## Contact form with contact details(after clicking on contact):
+
 ![image](https://user-images.githubusercontent.com/108211384/203536616-9897d234-3b96-4e13-b8f2-451f7c112dde.png)
 
 
