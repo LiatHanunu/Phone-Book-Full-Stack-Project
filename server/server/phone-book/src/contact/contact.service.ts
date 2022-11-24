@@ -34,6 +34,7 @@ export class ContactsService {
             contact.firstName = input.firstName;
             contact.lastName = input.lastName;
             contact.nickname = input.nickname;
+            contact.title = input.title
             contact.photo = input.photo;
             contact.photoStyle = input.photoStyle
             contact.phoneNumbers = input.phoneNumbers;

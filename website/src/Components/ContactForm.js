@@ -137,6 +137,7 @@ export default function ContactForm(props) {
                 firstName: user.firstName.value,
                 lastName: user.lastName.value,
                 nickname: user.nickname.value,
+                title: user.nickname.value || `${user.firstName.value}  ${user.lastName.value}`,
                 address: user.address.value,
                 photo: img,
                 photoStyle: user.photoStyle.value,

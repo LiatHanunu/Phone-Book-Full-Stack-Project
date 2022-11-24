@@ -8,6 +8,7 @@ const ADD_CONTACT = gql`mutation refactored241($createContactInput: ContactDto!)
       firstName
       lastName
       nickname
+      title
       address
       photo
       photoStyle
@@ -24,6 +25,7 @@ mutation refactored918($updateProjectInput: UpdateContactDto!) {
       firstName
       lastName
       nickname
+      title
       address
       photo
       photoStyle
@@ -56,6 +58,7 @@ query findAllContacts
     firstName
     lastName
     nickname
+    title
     address
     photo
     photoStyle
