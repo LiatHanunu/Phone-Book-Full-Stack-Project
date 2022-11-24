@@ -12,6 +12,9 @@ export class ContactDto {
     nickname:string
 
     @Field()
+    title:string
+
+    @Field()
     address:string
     
     @Field()

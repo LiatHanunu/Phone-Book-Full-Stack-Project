@@ -37,6 +37,13 @@ export class Contact {
     nullable: true,
     default: '',
   })
+  title: string;
+
+  @Field()
+  @Column({
+    nullable: true,
+    default: '',
+  })
   address: string;
 
   @Field()

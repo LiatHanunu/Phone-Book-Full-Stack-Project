@@ -15,6 +15,9 @@ export class UpdateContactDto {
     nickname:string
 
     @Field()
+    title:string
+
+    @Field()
     address:string
     
     @Field()

@@ -1,38 +1,20 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Contact from '../Components/Contact';
 import { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import NavBar from '../Components/NavBar';
-import { newContactsSlice, sortContacts } from '../General/generalFunctions';
-
-
-
-
-
-
-
+import { sortContacts } from '../General/generalFunctions';
 
 
 let con = 5
 export default function PhoneBookMainPage() {
     const contactsInfo = JSON.parse(localStorage.getItem('contacts')) || []
-    const [contacts, setContacts] = useState(newContactsSlice(contactsInfo, 0, 5))
+    const [contacts, setContacts] = useState(contactsInfo.slice(0, 5))
 
-    function searchContact(contact, s) {
-        //this function gets a string and a contact and returns if the contact title contain this string(nickname or firstName+lastName)
-        const str = s.toLowerCase()
-        if (contact.nickname) {
-            return contact.nickname.toLowerCase().includes(str)
-        }
-        return (`${contact.firstName} ${contact.lastName}`).toLowerCase().includes(str)
-    }
 
     const searchContacts = (e) => {
         //this function gets a string and show all the contacts the contain this string
-        const filteredContacts = contactsInfo.filter((contact) => searchContact(contact, e.target.value))
+        const filteredContacts = contactsInfo.filter((contact) => contact.title.toLowerCase().includes(e.target.value.toLowerCase()))
         setContacts(sortContacts(filteredContacts))
     }
 
@@ -45,7 +27,7 @@ export default function PhoneBookMainPage() {
             } else {
                 con += 5
             }
-            setContacts([...newContactsSlice(contactsInfo, 0, con)])
+            setContacts([...contactsInfo.slice(0, con)])
         }
     }
 
@@ -54,14 +36,11 @@ export default function PhoneBookMainPage() {
     })
 
     return (
-        <Container className='' >
-           
+        <Container>
                 <NavBar search={searchContacts}></NavBar>
-           
                 <ListGroup as="ul">
                     {contacts.map((contact, index) => <ListGroup.Item key={index} action variant="light" ><Contact contact={contact} /></ListGroup.Item>)}
                 </ListGroup>
-           
         </Container>
 
     )
