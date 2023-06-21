@@ -51,12 +51,12 @@ Nestjs for the backend and Graphql for the communication between the front and t
 ### server
 - [x] Create CRUD operations to store a contact in a database.
 - [x] Each contact will have the following properties:
-  <li> ● First name
-  <li> ● Last name
-  <li>● Nickname
-  <li> ● List of phone numbers(a contact may have multiple phone numbers)
-  <li>● Address
-  <li> ● Photo
+  <li>  First name
+  <li>  Last name
+  <li>Nickname
+  <li>  List of phone numbers(a contact may have multiple phone numbers)
+  <li>Address
+  <li>  Photo
 - [x] Store all data in PostgreSQL, the database will run on a docker.
 <li> You may add additional content in order to complete the assignment as you see fit.
 
@@ -73,9 +73,9 @@ showing 5 contacts at a time.
 image formats will be supported.
 - [x] It will have an option to apply a filter to the user photo and the filter amount, the filters that
 can be applied are:
-  <li>  ●  Gray scale
-  <li>  ●  Blur
-  <li>  ●  Saturation
+  <li>  Gray scale
+  <li>   Blur
+  <li>   Saturation
 - [x] The contacts in the list should be clickable, once a user been clicked a popup should appear with
 all of the contacts details, within this popup there should be the option to edit the contact(should
 have the same functionality as the add contact) and a way to delete the contact
